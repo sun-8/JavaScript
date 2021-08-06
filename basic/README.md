@@ -1,6 +1,6 @@
 # JavaScript (script.js)
 
-브라우저의 f12 console에서 JS를 다룰 수 있다.  
+\*브라우저의 f12 console에서 JS를 다룰 수 있다.  
 브라우저의 console은 JS와 상호작용 하기에는 좋지만 긴 JS프로그램을 작성해야한다면 유용하지 않다.  
 브라우저의 console은 JS의 잘못된 부분(에러)을 알려주기도 한다.
 
