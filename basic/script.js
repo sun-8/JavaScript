@@ -117,3 +117,48 @@ calculator.add(1, 7);
 calculator.minus(10, 10);
 calculator.divide(8, 4);
 calculator.powerOf(2, 3); //8
+const age = 90;
+//나의 외국나이를 계산하는 함수 생성
+function calculateKrAge(age) {
+  return age - 2;
+}
+//계산 결과 받기
+const usAge = calculateKrAge(age); //age자리에 90이 오면서 return값을 가져와 usAge에 저장
+console.log(usAge);
+//return을 이용한 코드들끼리의 연결
+const calculators = {
+  add: function (a, b) {
+    return a + b;
+  },
+  minus: function (a, b) {
+    return a - b;
+  },
+  divide: function (a, b) {
+    return a / b;
+  },
+  powerOf: function (a, b) {
+    return a ** b; //a를 b의 갯수만큼 곱한다.
+  },
+};
+//상호의존적으로 코드를 작성할 수 있다.
+const addResult = calculators.add(1, 3); //console에 변수 복붙하면 값이 출력된다.
+const minusResult = calculators.minus(addResult, 2);
+const devideResult = calculators.divide(minusResult, 1);
+
+//음주가 가능한 나이인지 확인하는 코드작업
+const yourAge = parseInt(prompt("How old are you?")); //"23"->23
+//parseInt는 문자열을 숫자로 변경해준다.String->number(숫자가 아닌 문자열을 쓰면 NaN출력된다.)
+//위의 코드에서는 2개의 function을 사용 (1.prompt() + 2.parseInt())
+if (isNaN(yourAge) || yourAge < 0) {
+  //입력한 문자가 숫자가 아니거나(NaN이면) 음수를 입력하면 나이를 다시 입력하라는 코드
+  alert("Please write a your age number.");
+} else if (yourAge < 20) {
+  alert("You are too young. You can't drink!!");
+} else if (yourAge < 60) {
+  //yourAge>=20 && yourAge<=60으로 할 수 있지만 위의 코드에서 이미 20세 미만이면 실행된다는 가정이 있기 때문에 안써줘도 된다.
+  //즉 위의 코드에서 20세 미만인지 아닌지를 먼저 검사했기 때문에 지금 else if코드에서 20세가 넘는다는 가정을 할 필요가 없다.
+  alert("You can drink><");
+} else {
+  //나머지 양의 숫자
+  alert("I think you can't drink..");
+}
