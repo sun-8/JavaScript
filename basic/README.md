@@ -88,9 +88,10 @@ prompt function을 잘 사용하지 않는 이유?!
 - 어떤 브라우저는 이런 팝업을 제안하기도 해서 이 함수는 굉장히 옛날방식이다.
 - cancel(취소)를 누르면 값이 null으로 출력된다.
 
-isNaN() function은 받은 인자가 NaN인지 아닌지 boolean타입으로 반환하여 알려준다.  
-true라면 숫자가 아니라는 뜻  
-false라면 숫자가 맞다는 뜻
+isNaN() function은 받은 인자가 NaN인지 아닌지 boolean타입으로 반환하여 알려준다.
+
+- true라면 숫자가 아니라는 뜻
+- false라면 숫자가 맞다는 뜻
 
 ### Conditional-148
 
