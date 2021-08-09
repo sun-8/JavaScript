@@ -16,10 +16,12 @@ console창에 document.title이라고 작성하면 HTML의 title이 출력된다
 - console.dir()은 element를 더 자세하게 출력한다.
 - document.body는 HTML의 body항목만 가져온다.
 - document.location은 HTML이 어느 경로에 위치하고있는지 알려준다.
-- document.getElementById("id입력")은 해당 id에 대한 코드를 보여준다.첫번째 id만 가져와서 보여준다.
+- document.getElementById("id입력")은 해당 id에 대한 코드를 보여준다.  
+  첫번째 id만 가져와서 보여준다.
 - document.getElementByClassName("class입력")은 해당 class이름에 대한 코드를 보여준다.
 - document.getElementByTagName("tag입력")은 해당 tag가 있는 코드를 모두 가져와 보여준다.
-- document.querySelecter("검색할 것")은 검색에 해당하는 코드를 하나만 보여준다.(여러 개 있다면 첫번째 것을 보여줌) 찾지 못하면 null이 출력된다.
+- document.querySelecter("검색할 것")은 검색에 해당하는 코드를 하나만 보여준다.(여러 개 있다면 첫번째 것을 보여줌)  
+  찾지 못하면 null이 출력된다.
 - document.querySelecterAll("검색할 것")은 검색에 해당하는 모든 코드를 array형식으로 보여준다.
 
 ### Events- / 26
