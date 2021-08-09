@@ -75,6 +75,7 @@ window.addEventListener("offline", handleWindowOffline);
 //와이파이에 연결이 안되어있다면 함수 호출 -> 끝고 다시 연결해야 실행된다.
 window.addEventListener("online", handleWindowOnline);
 
+//JS에 style줄 때
 //text를 클릭했을 때 빨강,파랑으로 색이 번갈아가며 바뀌기
 const h33 = document.getElementById("h3"); //아이디 값을 가져와서 변수에 저장
 function clickclick() {
@@ -89,3 +90,27 @@ function clickclick() {
 }
 //h33를 클릭할 때 이벤트 발생
 h33.addEventListener("click", clickclick);
+//JS에 어떠한 style도 주지 않을 때 - css에 작성(역할을 분리)
+//이 코드(className)의 버그는 원래부터 class명이 주어진 상태에서 event를 실행하면 원래있던 class명이 아예 사라진다?!
+//원래있던 class명을 clickedClass에 추가해줘도 되지만 원래있던 class명이 많을 때는 굉장히 비효율적이다.
+//이럴때는 JS에서 모든 class이름을 변경하면 안되게끔 바꿔줘야한다.
+//className말고 classList라는 속성이 있는데 이는 class들을 목록으로 작업할 수 있게끔 허용해준다.
+const h2 = document.getElementById("h2");
+function handleH2Click() {
+  const clickedClass = "clicked";
+  if (h2.classList.contains(clickedClass)) {
+    //만약 clickedClass가 h2의 classList에 포함되어 있다면
+    //class명 자체를 작성할 때 생긴 오타는 console에서 보여주지 않지만 변수에 저장한 것을 썼을 때 오타로 인한 에러는 변수가 정의되어있지 않다며 알려준다.
+    h2.classList.remove(clickedClass); //clickedClass를 지워라
+  } else {
+    h2.classList.add(clickedClass);
+  }
+} //className대신 classList를 사용하면 기존의 class를 건들이지 않고 이벤트 변화를 줄 수 있다.
+h2.addEventListener("click", handleH2Click);
+//위의 코드를 좀더 멋지고 간단하게 코드로 작성해보자.
+const h4 = document.getElementById("h4");
+function handleH4Click() {
+  h4.classList.toggle("clicked"); //한번만 작성해줘도 되서 class명을 작성했다.
+  //toggle은 element의 classList에 clicked 클래스가 있는지 여부를 확인해서 있다면 제거해주고 없으면 추가해준다.
+}
+h4.addEventListener("click", handleH4Click);
