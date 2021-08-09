@@ -7,7 +7,7 @@ const TODOS_KEY = "todos";
 const toDos = [];
 
 function saveToDos() {
-  localStorage.setItem("todos", JSON.stringify(toDos));
+  localStorage.setItem("todos", JSON.stringify(toDos)); //JSON함수로 인해 string으로 변환
 }
 
 function deleteToDo(event) {
@@ -44,14 +44,10 @@ function handleToDoSubmit(event) {
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
 
-function sayHello(item) {
-  console.log("this is the turn of", item);
-}
-
 const savedToDos = localStorage.getItem(TODOS_KEY);
 
 if (savedToDos !== null) {
-  const parseToDos = JSON.parse(savedToDos);
+  const parseToDos = JSON.parse(savedToDos); //JSON함수로 배열로 만들었다.
   console.log(parseToDos);
-  parseToDos.forEach(sayHello);
+  parseToDos.forEach((item) => console.log("this is thie turn of", item)); //sayHello()을 간단하게 바꾼 것 -> github histroy보기
 }
