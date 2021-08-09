@@ -39,4 +39,33 @@ JS에서 대부분의 작업은 Event를 listen하는 것이다.
 Event란, 어떠한 행동을 했을 때 이루어지는 작업이다.  
 ex) click,mouseover,enter,입력끝내기,이름적기
 
+listen 하고 싶은 Event를 website에서 찾는 방법!!
+
+1. google에 찾고싶은 element의 이름(ex]h1)+html element mdn을 검색한다.
+2. mdn의 링크에 WebAPIs라는 문장이 포함된 사이트를 찾는다.(JS관점의 HTML Element라는 뜻)
+3. 사이트에 들어가서 Event부분을 찾는다.
+
+listen 하고 싶은 Event를 Element에서 찾는 방법!!
+
+1. console.dir(element);해서 element를 console에 출력시켜준다.
+2. 사용 가능한 이벤트를 찾는다.(on으로 시작하는 것)
+3. 사용할 때는 앞의 on을 떼고 사용해야 한다.(onclick -> click)
+
 - HTML element.addEventListener("사용할 이벤트",이벤트가 실행되었을 때의 작업)은 이벤트를 주는 기본적인 코드이다.
+- 다른 방식으로는 HTML element.on이벤트이름=함수 로 작성할 수 있다.
+- 첫번째 방법은 나중에 removeEventListener로 event를 삭제할 수 있다.
+
+Event 종류?!
+
+- click - 클릭하면
+- mouseenter - 마우스오버하면
+- mouseleave - 마우스를 떼면
+- resize - 화면크기가 바뀌면(좁아지던 넓어지던 상관없음)
+- copy - 복사하면
+- offline - 인터넷 연결이 끊겨있으면
+- online - 인터넷 연결이 되있으면 (끊고 연결해야 실행됨)
+
+### CSS in JS-23 / 78
+
+JS로 CSS기능을 구현할 수 있지만 꾸며주는 것은 한쪽에서만 해주는 것이 좋은 것 같다.  
+JS는 상호작용을 만들어 내는 데에 가장 적합한 것 같다.
